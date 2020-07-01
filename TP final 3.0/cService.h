@@ -1,7 +1,11 @@
 #include "iostream"
 #include "string"
-#include "vector"
+#include <vector>
+//#include "Log.h"
 
+enum tipoServicio { juegos, peliculas, musica };
+
+using namespace std;
 
 class cService
 {
@@ -9,24 +13,17 @@ class cService
 	string nombre;
 	bool mayorEdad;
 	tipoServicio tipoS;
-	vector<string> paisesProhibidos;
-	
 
 public:
-		
-
+	vector<string> paisesprohibidos;
 	cService(string nombre, bool mayorEdad,tipoServicio tipoS, vector<string> paisesProhibidos);
 	~cService();
-	void Iniciar();
-	void Pausar(int segundos);
-	void Apagar();
+	virtual void Iniciar();// A revisar
+	virtual void Pausar(int segundos);
+	virtual void Apagar();
 	virtual void Descargar();
-	bool paisesprohibidos(string pais);// retorna true si el pais pasado x parametro no es prohibido del servicio
-	string getNombre(){
-	return nombre;
-	}
-	tipoServicio getTipo() {
-		return tipoS;
-	}
+	virtual bool paisesprohibidos(string pais);// retorna true si el pais pasado x parametro no es prohibido del servicio
+	virtual string getNombre(){return nombre;}
+	virtual tipoServicio getTipo() {return tipoS;}
 };
 

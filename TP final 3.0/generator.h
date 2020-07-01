@@ -107,12 +107,6 @@ void generatorS(cService *serv)
 {
 	vector<string>paisesprohibidos;
 	string pais = "";
-
-
-	paisesprohibidos.push_back("argentina");
-
-
-
 	srand(time(NULL));
 	vector<string> peliculas;
 	string nombre = "Mad Max-Fury-Titanic-Maze Runner-Hunger Games-Jojo Rabbit-Hangover-21 Blackjack-Harry Potter-Zatura-El origen-Pets-Toy Story-The Lion King-the notebook-High school musical-Entrenando a mi dragon- cars-cars2-Lilo y stich- Hannah Montana-El conjuro.";
@@ -163,7 +157,7 @@ void generatorS(cService *serv)
 	{
 		srand((unsigned)time(NULL));
 		bool b= 0 + (rand() % (1 - 0 + 1)) == 1;
-
+		int l = (rand() % 6);
 		for (int i = 0;i < l;i++) {
 			if (paisJ[i] != ' ') {
 				aux += paisJ[i];

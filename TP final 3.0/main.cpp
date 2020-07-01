@@ -10,6 +10,7 @@
 #include "Log.h"
 #include "Logger.h"
 #include "cStreaming.h"
+#include <ctime>
 #define x 15
 #define NMAX 100
 
@@ -26,13 +27,15 @@ int main()
 	cListaT<cUsuario> listaU;
 	cListaT<cService> listaS;
 
-	for (int i = 0;i < NMAX;i++)
+	for(int i = 0;i < NMAX;i++)
 	{
-	generatorU(vector[i]);
+	generatorU(vector[i]);//agrego UN solo usuario
 	generatorS(vector2[i]);
 	listaU.Agregar(vector[i]);
 	listaS.Agregar(vector2[i]);
 	}
+
+	//cStreaming(string nombre, cListaT<cService> ListaServicios, cListaT<cUsuario> ListaUsuarios);
 	
 	cStreaming Labflix("Labflix",listaU,listaS);
 
@@ -52,3 +55,7 @@ int main()
 	historial.PromedioUsuarios(mesI, diaI, mesF, diaF);
 
 }
+
+
+
+//if (find(this->paisesprohibidos.begin(), this->paisesprohibidos.end(), pais) != this->paisesprohibidos.end())  ta weno

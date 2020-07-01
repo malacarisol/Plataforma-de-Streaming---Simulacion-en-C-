@@ -12,18 +12,18 @@ protected:
 	T** lista;
 
 	unsigned int CA, TAM;
-	void Redimensionalizar();
 
 public:
 	cListaT(unsigned int TAM = NMAX);
 	~cListaT();
 
-	bool Agregar(T* serv);
+	bool Agregar(T* item);
 	void Eliminar(string nombre);
 	void Listar(int cantidadAlistar);
+	T* get(int pos);
 	T* Buscar(string nombre);
-	T* get(unsigned int pos);
 	unsigned int GetPos(string nombre);
 	unsigned int getTamanio();
 	unsigned int getCA();
 };
+
