@@ -231,5 +231,4 @@ void generatorS(cService *serv)
 	}
 }
 
-//cMusica(int duracion,eCategoria categoria, string nombre, bool mayorEdad);
-//cPeliculas(int duracion, ePeliculas peli, string nombre, bool mayorEdad);
+

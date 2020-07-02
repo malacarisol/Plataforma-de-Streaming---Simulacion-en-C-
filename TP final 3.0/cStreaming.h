@@ -16,10 +16,10 @@ class cMusica;
 
 class cStreaming
 {
-	cListaT<cService> ListaServicios;
-	cListaT<cUsuario> ListaUsuarios;
+	cListaT<cService>* Servicios;
+	cListaT<cUsuario>* Usuarios;
 	string nombre;
-	Logger historial;
+
 	static string masEscuchados;
 	static string masVistas;
 	static string masJugados;
@@ -28,9 +28,9 @@ public:
 	cStreaming(string nombre, cListaT<cService> ListaServicios, cListaT<cUsuario> ListaUsuarios);
 	~cStreaming();
 	bool Loguearse(string username, string password);
-	void Explorar(cUsuario* user, tipoServicio tipoS);//muestra el contenido al usuario
-	void Simulacion();//conecta usuarios y inicia un servicio al azar creando logs
-	void Listarnovedades(tipoServicio serv);//solo se implementa si el usuario es free, le muestra las novedades
+	void Explorar(cUsuario* user, tipoServicio tipoS);                 //muestra el contenido al usuario
+	void Simulacion();                                             //conecta usuarios y inicia un servicio al azar creando logs
+	void Listarnovedades(tipoServicio serv);                 //solo se implementa si el usuario es free, le muestra las novedades
 
 };
 

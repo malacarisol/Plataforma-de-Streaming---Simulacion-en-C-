@@ -12,6 +12,7 @@ enum eTipoUsuario { free, basic, premium };
 class cUsuario
 {
 private:
+	
 	int edad;
 	string usuario;
 	string hashpassword;
@@ -20,7 +21,8 @@ private:
 	const string pais;
 	const string apellido;
 	const string nombre;
-	vector<string> descargas;
+
+	vector<string> favoritos;
 	bool anuncios;
 	int cuota;
 	time_t tiempoON;//registra la hora cuando ingresa a un servicio
@@ -29,18 +31,20 @@ private:
 	int  tiempoLimite;
 	eTipoUsuario tipo;
 public:
-	vector<string> favoritos;
+	vector<string> descargas;
+
 	cUsuario(int edad, string usuario, string hashpassword, bool conectado, string pais, string apellido, string nombre, eTipoUsuario tipo);
 	~cUsuario();
 //void Play(cService *serv);
-	bool AgregarFavoritos(cService *ser);
+	
 	void setCuota(int c);
 	time_t offline();
 	time_t online();
-	string getUsername();
 	
 	string getPassword();
 	eTipoUsuario getTipo();
+	friend void cService::Descargar(cUsuario* user1, string nombre);
+	//friend void c
 	string getPais()const { return pais; };
 	string getNombre() const { return nombre; };
 	void getanuncios() {

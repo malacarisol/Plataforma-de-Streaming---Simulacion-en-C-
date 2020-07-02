@@ -1,7 +1,7 @@
 #include "cListaT.h"
-
+using namespace std;
 template<class T>
-inline cListaT<T>::cListaT(unsigned int TAM)
+ cListaT<T>::cListaT(unsigned int TAM)
 {
 	lista = new T * [TAM];
 	for (unsigned int i = 0; i < TAM; i++)
@@ -14,7 +14,7 @@ inline cListaT<T>::cListaT(unsigned int TAM)
 }
 
 template<class T>
-inline cListaT<T>::~cListaT()
+ cListaT<T>::~cListaT()
 {
 	if (lista != NULL)
 	{
@@ -29,7 +29,7 @@ inline cListaT<T>::~cListaT()
 }
 
 template<class T>
-inline bool cListaT<T>::Agregar(T* item)
+ bool cListaT<T>::Agregar(T* item)
 {
 
 	T* i_f = BuscarItem(item->getNombre());        //getnomre en usuario y serv
@@ -42,7 +42,7 @@ inline bool cListaT<T>::Agregar(T* item)
 }
 
 template<class T>
-inline void cListaT<T>::Eliminar(string nombre)
+ void cListaT<T>::Eliminar(string nombre)
 {
 	T* aux = Buscar(nombre);
 	if (aux == NULL)
@@ -59,7 +59,7 @@ inline void cListaT<T>::Eliminar(string nombre)
 }
 
 template<class T>
-inline void cListaT<T>::Listar(int cantidadAlistar)
+ void cListaT<T>::Listar(int cantidadAlistar)
 {
 	cout << lista[0]->getNombre() << endl;
 }
@@ -73,7 +73,7 @@ T* cListaT<T>::get(int pos)
 }
 
 template<class T>
-inline T* cListaT<T>::Buscar(string nombre)
+ T* cListaT<T>::Buscar(string nombre)
 {
 	for (unsigned int i = 0; i < CA; i++)
 	{
@@ -85,19 +85,19 @@ inline T* cListaT<T>::Buscar(string nombre)
 
 
 template<class T>
-inline unsigned int cListaT<T>::getTamanio()
+ unsigned int cListaT<T>::getTamanio()
 {
 	return TAM;
 }
 
 template<class T>
-inline unsigned int cListaT<T>::getCA()
+ unsigned int cListaT<T>::getCA()
 {
 	return CA;
 }
 
 template<class T>
-inline unsigned int cListaT<T>::GetPos(string nombre)
+ unsigned int cListaT<T>::GetPos(string nombre)
 {
 
 	for (unsigned int i = 0; i < CA; i++)

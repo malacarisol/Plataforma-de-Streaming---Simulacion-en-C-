@@ -15,22 +15,30 @@ cService::~cService()
 
 void cService::Iniciar()
 {
-
+	cout << "Begin" << endl;
 }
 
-void cService::Pausar(int segundos)
+void cService::Pausar(int segundos)   //implementado en las hijas
 {
+	cout << "Pause" << endl;
 }
 
 void cService::Apagar()
 {
+	cout << "End" << endl;
 }
 
-void cService::Descargar()
+void cService::Descargar(cUsuario* user1, string nombre)
 {
+	user1->descargas.push_back(nombre);
 }
-
-bool cService::paisesprohibidos(string pais)
+bool cService::AgregarFavoritos(cUsuario* user1,string nombre)
+{
+	if (user1->favoritos.push_back(nombre))
+		return true;
+	else return false;
+}
+bool cService::IsProhibidoPais(string pais)
 {
 	if (find(this->paisesprohibidos.begin(), this->paisesprohibidos.end(), pais) != this->paisesprohibidos.end())
 	{

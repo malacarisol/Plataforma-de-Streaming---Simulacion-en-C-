@@ -11,7 +11,7 @@ enum Mes { enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembre,
 enum Dia { lunes, martes, miercoles, jueves, viernes, sabado, domingo };
 
 class Log
-{//friend int laOtraClase::metodo(); 
+{//friend int laOtraClase::metodo() 
 	friend class Logger;
 
 	string username;
@@ -24,12 +24,14 @@ class Log
 	int anio;
 
 public:
-	Log(string username, string nombreServicio, time_t tiempo, eTipoUsuario tipoU, tipoServicio tipoS, Mes mes, Dia dia,int anio);//Se guardan los datos despues de acceder de acada servicio
+	Log(string username, string nombreServicio, time_t tiempo, eTipoUsuario tipoU, tipoServicio tipoS, Mes mes, Dia dia,int anio);   //Se guardan los datos despues de acceder de acada servicio
 	~Log();
 	string getnombre() { return username; };
 	string getnombreS() { return nombreServicio; };
+	tipoServicio getTipoServicio() { return tipoS; };
 	time_t gettiempo() { return tiempoUso; };
-	int getmes();      //castear enum a  int
-	int getdia();
+	int getmes() { return  mes; };    //castear enum a  int
+	int getdia() { return dia; };          //return  static_cast<int>(dia); };
+	int getanio() {return anio; };
 
 };
