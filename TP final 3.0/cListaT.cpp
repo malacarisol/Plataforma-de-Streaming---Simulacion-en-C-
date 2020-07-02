@@ -1,9 +1,9 @@
 #include "cListaT.h"
-using namespace std;
+
 template<class T>
- cListaT<T>::cListaT(unsigned int TAM)
+cListaT<T>::cListaT(unsigned int TAM)
 {
-	lista = new T * [TAM];
+	lista = new T *[TAM];
 	for (unsigned int i = 0; i < TAM; i++)
 	{
 		lista[i] = NULL;
@@ -14,7 +14,7 @@ template<class T>
 }
 
 template<class T>
- cListaT<T>::~cListaT()
+cListaT<T>::~cListaT()
 {
 	if (lista != NULL)
 	{

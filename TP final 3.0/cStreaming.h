@@ -13,6 +13,7 @@ using namespace std;
 class cJuegos;
 class cPeliculas;
 class cMusica;
+class cUsuario;
 
 class cStreaming
 {
@@ -25,7 +26,7 @@ class cStreaming
 	static string masJugados;
 
 public:
-	cStreaming(string nombre, cListaT<cService> ListaServicios, cListaT<cUsuario> ListaUsuarios);
+	cStreaming(string nombre, cListaT<cService> &ListaServicios, cListaT<cUsuario> &ListaUsuarios);
 	~cStreaming();
 	bool Loguearse(string username, string password);
 	void Explorar(cUsuario* user, tipoServicio tipoS);                 //muestra el contenido al usuario

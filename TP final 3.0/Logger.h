@@ -1,4 +1,4 @@
-#pragma once
+
 #include "Log.h"
 #include<ctime>
 #include <iostream>

@@ -43,7 +43,7 @@ string Logger::MasVisto(Mes desde, Dia desde_, Mes hasta, Dia hasta_,int anio_)
 
 	for (int i = 0;i < ca;i++)
 	{
-		if (log[i]->getTipoServicio == peliculas&&log[i]->getdia>=desde_&&log[i]->getdia<=hasta_&&log[i]->getmes>=desde&&log[i]->getmes<=hasta&&log[i]->getanio==anio_)    //encuenctra el tiempo de la primer pelicula d ela lista
+		if (log[i]->getTipoServicio() == peliculas&&log[i]->getdia()>=desde_&&log[i]->getdia()<=hasta_&&log[i]->getmes()>=desde&&log[i]->getmes()<=hasta&&log[i]->getanio()==anio_)    //encuenctra el tiempo de la primer pelicula d ela lista
 		{
 			max = static_cast<long int> (log[i]->gettiempo());
 			break;
@@ -52,7 +52,7 @@ string Logger::MasVisto(Mes desde, Dia desde_, Mes hasta, Dia hasta_,int anio_)
 
 	for (int i=0;i<ca;i++)//compara los tiempos de las peliculas con el primero encontrado 
 	{
-		if ((log[i]->getTipoServicio == peliculas&&log[i]->getdia>=desde_&&log[i]->getdia<=hasta_&&log[i]->getmes>=desde&&log[i]->getmes<=hasta&&log[i]->getanio==anio_))
+		if ((log[i]->getTipoServicio() == peliculas&&log[i]->getdia()>=desde_&&log[i]->getdia()<=hasta_&&log[i]->getmes()>=desde&&log[i]->getmes()<=hasta&&log[i]->getanio()==anio_))
 		{
 			long int t = static_cast<long int> (log[i]->gettiempo());     //Estamos viendo cual fue la pelicula mas vista
 			if (t > max)         
@@ -62,7 +62,7 @@ string Logger::MasVisto(Mes desde, Dia desde_, Mes hasta, Dia hasta_,int anio_)
 
 		}
 	}
-	return log[a]->getnombreS;  //devolvemos nombre pelicula
+	return log[a]->getnombreS();  //devolvemos nombre pelicula
 }
 
 string Logger::MasJugados(Mes desde, Dia desde_, Mes hasta, Dia hasta_,int anio_)
@@ -72,7 +72,7 @@ string Logger::MasJugados(Mes desde, Dia desde_, Mes hasta, Dia hasta_,int anio_
 
 	for (int i = 0;i < ca;i++)
 	{
-		if (log[i]->getTipoServicio == juegos&&log[i]->getdia>=desde_&&log[i]->getdia<=hasta_&&log[i]->getmes>=desde&&log[i]->getmes<=hasta&&log[i]->getanio==anio_)   //encuenctra el tiempo de la primer pelicula d ela lista
+		if (log[i]->getTipoServicio() == juegos&&log[i]->getdia()>=desde_&&log[i]->getdia()<=hasta_&&log[i]->getmes()>=desde&&log[i]->getmes()<=hasta&&log[i]->getanio()==anio_)   //encuenctra el tiempo de la primer pelicula d ela lista
 		{
 			max = static_cast<long int> (log[i]->gettiempo());
 			break;
@@ -81,7 +81,7 @@ string Logger::MasJugados(Mes desde, Dia desde_, Mes hasta, Dia hasta_,int anio_
 
 	for (int i = 0;i < ca;i++)//compara los tiempos de las peliculas con el primero encontrado 
 	{
-		if (log[i]->getTipoServicio == juegos&&log[i]->getdia>=desde_&&log[i]->getdia<=hasta_&&log[i]->getmes>=desde&&log[i]->getmes<=hasta&&log[i]->getanio==anio_) 
+		if (log[i]->getTipoServicio()== juegos&&log[i]->getdia()>=desde_&&log[i]->getdia()<=hasta_&&log[i]->getmes()>=desde&&log[i]->getmes()<=hasta&&log[i]->getanio()==anio_) 
 		{
 			long int t = static_cast<long int> (log[i]->gettiempo());     //Estamos viendo cual fue la pelicula mas vista
 			if (t > max)
@@ -92,26 +92,25 @@ string Logger::MasJugados(Mes desde, Dia desde_, Mes hasta, Dia hasta_,int anio_
 
 		}
 	}
-	return log[a]->getnombreS;  //devolvemos nombre pelicula
+	return log[a]->getnombreS();  //devolvemos nombre pelicula
 }
 
 string Logger::MasEscuchados(Mes desde, Dia desde_, Mes hasta, Dia hasta_,int anio_)
 {
 	long int max = 0;
 	int a = 0;
+	//for (int i = 0;i < ca;i++)
+	//{
+	//	if (log[i]->getTipoServicio == musica&&log[i]->getdia()>=static_cast<int>(desde_)&&log[i]->getdia()<= static_cast<int>(hasta_) &&log[i]->getmes()>= static_cast<int>(desde) &&log[i]->getmes()<= static_cast<int>(hasta) &&log[i]->getanio()==anio_)   //encuenctra el tiempo de la primer musica d ela lista
+	//	{
+	//		max = static_cast<long int> (log[i]->gettiempo());
+	//		break;
+	//	}
+	//}
 
-	for (int i = 0;i < ca;i++)
+	for (int i = 0;i < ca;i++)//compara los tiempos de la musica con el primero encontrado 
 	{
-		if (log[i]->getTipoServicio == musica&&log[i]->getdia>=desde_&&log[i]->getdia<=hasta_&&log[i]->getmes>=desde&&log[i]->getmes<=hasta&&log[i]->getanio==anio_)   //encuenctra el tiempo de la primer musica d ela lista
-		{
-			max = static_cast<long int> (log[i]->gettiempo());
-			break;
-		}
-	}
-
-	for (int i = 0;i < ca;i++)//compara los tiempos de las peliculas con el primero encontrado 
-	{
-		if (log[i]->getTipoServicio == musica&&log[i]->getdia>=desde_&&log[i]->getdia<=hasta_&&log[i]->getmes>=desde&&log[i]->getmes<=hasta&&log[i]->getanio==anio_)
+		if (log[i]->getTipoServicio()== musica&&log[i]->getdia()>=desde_&&log[i]->getdia()<=hasta_&&log[i]->getmes()>=desde&&log[i]->getmes()<=hasta&&log[i]->getanio()==anio_)
 		{
 			long int t = static_cast<long int> (log[i]->gettiempo());     //Estamos viendo cual fue la pelicula mas vista
 			if (t > max)
@@ -122,7 +121,7 @@ string Logger::MasEscuchados(Mes desde, Dia desde_, Mes hasta, Dia hasta_,int an
 
 		}
 	}
-	return log[a]->getnombreS;  //devolvemos nombre musica
+	return log[a]->getnombreS();  //devolvemos nombre musica
 }
 
 float Logger::PromedioUsuarios(Mes desde, Dia desde_, Mes hasta, Dia hasta_, int anio)
@@ -132,7 +131,7 @@ float Logger::PromedioUsuarios(Mes desde, Dia desde_, Mes hasta, Dia hasta_, int
 
 	for (int i = 0;i < ca;i++)
 	{
-		if (log[i]->getdia >= desde_ && log[i]->getdia <= hasta_ && log[i]->getmes >= desde && log[i]->getmes <= hasta && log[i]->getanio == anio)   //encuenctra el tiempo de la primer musica d ela lista
+		if (log[i]->getdia() >= desde_ && log[i]->getdia() <= hasta_ && log[i]->getmes() >= desde && log[i]->getmes() <= hasta && log[i]->getanio() == anio)   //encuenctra el tiempo de la primer musica d ela lista
 		{
 			acum = acum + static_cast<long int> (log[i]->gettiempo());
 			cont++;

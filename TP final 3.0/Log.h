@@ -6,9 +6,8 @@
 
 using namespace std;
 
-enum tipoServicio { juegos, peliculas, musica };
-enum Mes { enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembre, octubre, noviembre, diciembre };
-enum Dia { lunes, martes, miercoles, jueves, viernes, sabado, domingo };
+typedef enum  { enero=1, febrero=2, marzo=3, abril=4, mayo=5, junio=6, julio=7, agosto=8, septiembre=9, octubre=10, noviembre=11, diciembre=12 } Mes;
+typedef enum { lunes=1, martes=2, miercoles=3, jueves=4, viernes=5, sabado=6, domingo=7 } Dia ;
 
 class Log
 {//friend int laOtraClase::metodo() 

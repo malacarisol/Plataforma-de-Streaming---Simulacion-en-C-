@@ -39,12 +39,6 @@ time_t cUsuario::online()//cambia el estado del usuario a online
 	
 }
 
-
-bool cUsuario::AgregarFavoritos(cService* ser)
-{
-	favoritos.push_back(ser->getNombre());
-}
-
 void cUsuario::setCuota(int c)
 {
 	this->cuota = c;
@@ -53,17 +47,14 @@ void cUsuario::setCuota(int c)
 time_t cUsuario::offline()//cambia el estado a offline
 {
 	if (!conectado)
-		return;
+		return 0;
 	else
 		conectado = false;
 	time_t timeOFF = time(0);
 	return timeOFF;
 }
 
-string cUsuario::getUsername()//Para acceder al nombre de usuario desde Streaming y asi checkear password
-{
-	return usuario;
-}
+
 string cUsuario::getPassword()
 {
 	return hashpassword;

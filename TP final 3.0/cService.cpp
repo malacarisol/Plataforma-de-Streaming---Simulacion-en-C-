@@ -1,11 +1,12 @@
 #include "cService.h"
+include "cUsuario.h"
 
 
-cService::cService(string nombre, bool mayorEdad, tipoServicio tipoS, vector<string> paisesProhibidos)
+cService::cService(string nombre, bool mayorEdad, tipoServicio tipoS, vector<string> paisesProhibidos):tipoS(tipoS)
 {
 	this->nombre = nombre;
 	this->mayorEdad = mayorEdad;
-	this->tipoS = tipoS;
+//	this->tipoS::tipoS;
 	this->paisesprohibidos = paisesProhibidos;    
 }
 
@@ -30,7 +31,7 @@ void cService::Apagar()
 
 void cService::Descargar(cUsuario* user1, string nombre)
 {
-	user1->descargas.push_back(nombre);
+	user1->getVectorDescargas().push_back(nombre);
 }
 bool cService::AgregarFavoritos(cUsuario* user1,string nombre)
 {

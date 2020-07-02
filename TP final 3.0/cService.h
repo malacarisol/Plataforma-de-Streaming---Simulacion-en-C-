@@ -1,12 +1,14 @@
+#pragma once
 #include "iostream"
+
 #include "string"
 #include <vector>
-//#include "cUsuario.h"
-//#include "Log.h"
-class cUsuario;
-enum tipoServicio { juegos, peliculas, musica };
 
+//#include "Log.h"
+//static enum class tipoServicio
 using namespace std;
+
+enum tipoServicio {juegos,peliculas,musica};
 
 class cService
 {
@@ -14,18 +16,17 @@ class cService
 	bool mayorEdad;
 	tipoServicio tipoS;
 	
-public:
-	
-	virtual void Descargar(cUsuario* user1, string nombre);
+public:	
 	vector<string> paisesprohibidos;
 	cService(string nombre, bool mayorEdad,tipoServicio tipoS, vector<string> paisesProhibidos);
-	~cService();
+	virtual ~cService();
 	virtual void Iniciar() ;// A revisar
 	virtual void Pausar(int segundos);
 	virtual void Apagar() ;
+	void Descargar(cUsuario* user1, string nombre);
 	bool AgregarFavoritos(cUsuario* user1, string nombre);
-	virtual bool IsProhibidoPais(string pais);// retorna true si el pais pasado x parametro no es prohibido del servicio
-	virtual string getNombre(){return nombre;}
-	virtual tipoServicio getTipo() { return tipoS; };
+	bool IsProhibidoPais(string pais);// retorna true si el pais pasado x parametro no es prohibido del servicio
+	string getNombre() { return nombre; };
+	tipoServicio getTipo() { return tipoS; };
 };
 

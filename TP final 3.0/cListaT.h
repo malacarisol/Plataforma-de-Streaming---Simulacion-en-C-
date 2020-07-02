@@ -1,12 +1,15 @@
-#pragma once
+#pragma oNce
+#include <string>
 #define NMAX 1000
-
+#include <string>
+#include <string>
+#include <string>
 #include <string>
 
 using namespace std;
 
 template<class T>
-class cListaT 
+class  cListaT
 {
 protected:
 	T** lista;

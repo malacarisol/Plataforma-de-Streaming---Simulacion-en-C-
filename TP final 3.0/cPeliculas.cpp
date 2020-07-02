@@ -34,6 +34,4 @@ void cPeliculas::Apagar()
 {
 }
 
-void cPeliculas::Descargar()
-{
-}
+

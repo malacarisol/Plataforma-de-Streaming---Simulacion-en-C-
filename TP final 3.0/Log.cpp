@@ -8,7 +8,7 @@ Log::Log(string username, string nombreServicio, time_t tiempo, eTipoUsuario tip
 	this->tipoU = tipoU;
 	this->tipoS = tipoS;
 	this->mes = mes;
-	this->dia - dia;
+	this->dia = dia;
 	this->anio = anio;
 }
 
