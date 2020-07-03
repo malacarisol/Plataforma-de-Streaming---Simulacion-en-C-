@@ -1,230 +1,27 @@
-﻿  cListaT.cpp
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cListaT.h(1,9): warning C4068: unknown pragma
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cListaT.cpp(64,2): error C3861: 'cout': identifier not found
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cListaT.cpp(64,35): error C3861: 'endl': identifier not found
-  cService.cpp
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cService.cpp(33,7): error C2027: use of undefined type 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cService.h(10): message : see declaration of 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cService.cpp(37,5): error C2027: use of undefined type 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cService.h(10): message : see declaration of 'cUsuario'
-  cStreaming.cpp
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cListaT.h(1,9): warning C4068: unknown pragma
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10,16): error C2365: 'free': redefinition; previous definition was 'function'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_malloc.h(85): message : see declaration of 'free'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10,16): error C2365: 'free': redefinition; previous definition was 'function'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_malloc.h(85): message : see declaration of 'free'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10,22): error C2365: 'basic': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10): message : see declaration of 'basic'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10,29): error C2365: 'premium': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10): message : see declaration of 'premium'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10,38): error C2371: 'eTipoUsuario': redefinition; different basic types
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10): message : see declaration of 'eTipoUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(13,1): error C2011: 'cUsuario': 'class' type redefinition
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(12): message : see declaration of 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.cpp(20,5): error C2027: use of undefined type 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.h(16): message : see declaration of 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.cpp(49,5): error C2027: use of undefined type 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.h(16): message : see declaration of 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.cpp(51,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.cpp(56,6): error C2027: use of undefined type 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.h(16): message : see declaration of 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.cpp(61,5): error C2027: use of undefined type 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.h(16): message : see declaration of 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.cpp(62,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.cpp(67,7): error C2027: use of undefined type 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.h(16): message : see declaration of 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.cpp(72,5): error C2027: use of undefined type 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.h(16): message : see declaration of 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.cpp(74,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.cpp(77,7): error C2027: use of undefined type 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.h(16): message : see declaration of 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.cpp(99,6): error C2027: use of undefined type 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.h(16): message : see declaration of 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.cpp(99,6): error C2660: 'cStreaming::Loguearse': function does not take 1 arguments
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.cpp(16,18): message : see declaration of 'cStreaming::Loguearse'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.cpp(101,24): error C2027: use of undefined type 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.h(16): message : see declaration of 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.cpp(103,7): error C2027: use of undefined type 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.h(16): message : see declaration of 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.cpp(106,9): error C2027: use of undefined type 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.h(16): message : see declaration of 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.cpp(112,21): error C2027: use of undefined type 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.h(16): message : see declaration of 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.cpp(113,16): warning C4244: 'initializing': conversion from 'double' to 'time_t', possible loss of data
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.cpp(114,32): error C2027: use of undefined type 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.h(16): message : see declaration of 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.cpp(114,78): error C2027: use of undefined type 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.h(16): message : see declaration of 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.cpp(114,123): error C2661: 'Log::Log': no overloaded function takes 6 arguments
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.cpp(117,14): warning C4150: deletion of pointer to incomplete type 'cUsuario'; no destructor called
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.h(16): message : see declaration of 'cUsuario'
-  cUsuario.cpp
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10,16): error C2365: 'free': redefinition; previous definition was 'function'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_malloc.h(85): message : see declaration of 'free'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.cpp(33,9): error C2561: 'cUsuario::online': function must return a value
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.cpp(30): message : see declaration of 'cUsuario::online'
-  Log.cpp
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10,16): error C2365: 'free': redefinition; previous definition was 'function'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_malloc.h(85): message : see declaration of 'free'
-  Logger.cpp
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10,16): error C2365: 'free': redefinition; previous definition was 'function'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_malloc.h(85): message : see declaration of 'free'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Logger.cpp(144,14): warning C4244: 'return': conversion from 'long' to 'float', possible loss of data
+﻿  cStreaming.cpp
+C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.cpp(66,29): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.cpp(77,29): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.cpp(89,29): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.cpp(104,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   main.cpp
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10,16): error C2365: 'free': redefinition; previous definition was 'function'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_malloc.h(85): message : see declaration of 'free'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cListaT.h(1,9): warning C4068: unknown pragma
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10,16): error C2365: 'free': redefinition; previous definition was 'function'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_malloc.h(85): message : see declaration of 'free'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10,22): error C2365: 'basic': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10): message : see declaration of 'basic'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10,29): error C2365: 'premium': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10): message : see declaration of 'premium'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10,38): error C2371: 'eTipoUsuario': redefinition; different basic types
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10): message : see declaration of 'eTipoUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(13,1): error C2011: 'cUsuario': 'class' type redefinition
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(12): message : see declaration of 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10,16): error C2365: 'free': redefinition; previous definition was 'function'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_malloc.h(85): message : see declaration of 'free'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10,22): error C2365: 'basic': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10): message : see declaration of 'basic'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10,29): error C2365: 'premium': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10): message : see declaration of 'premium'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10,38): error C2371: 'eTipoUsuario': redefinition; different basic types
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10): message : see declaration of 'eTipoUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9,17): error C2365: 'enero': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9): message : see declaration of 'enero'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9,26): error C2365: 'febrero': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9): message : see declaration of 'febrero'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9,37): error C2365: 'marzo': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9): message : see declaration of 'marzo'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9,46): error C2365: 'abril': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9): message : see declaration of 'abril'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9,55): error C2365: 'mayo': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9): message : see declaration of 'mayo'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9,63): error C2365: 'junio': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9): message : see declaration of 'junio'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9,72): error C2365: 'julio': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9): message : see declaration of 'julio'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9,81): error C2365: 'agosto': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9): message : see declaration of 'agosto'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9,91): error C2365: 'septiembre': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9): message : see declaration of 'septiembre'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9,105): error C2365: 'octubre': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9): message : see declaration of 'octubre'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9,117): error C2365: 'noviembre': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9): message : see declaration of 'noviembre'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9,131): error C2365: 'diciembre': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9): message : see declaration of 'diciembre'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9,146): error C2371: 'Mes': redefinition; different basic types
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9): message : see declaration of 'Mes'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(10,16): error C2365: 'lunes': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(10): message : see declaration of 'lunes'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(10,25): error C2365: 'martes': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(10): message : see declaration of 'martes'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(10,35): error C2365: 'miercoles': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(10): message : see declaration of 'miercoles'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(10,48): error C2365: 'jueves': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(10): message : see declaration of 'jueves'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(10,58): error C2365: 'viernes': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(10): message : see declaration of 'viernes'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(10,69): error C2365: 'sabado': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(10): message : see declaration of 'sabado'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(10,79): error C2365: 'domingo': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(10): message : see declaration of 'domingo'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(10,91): error C2371: 'Dia': redefinition; different basic types
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(10): message : see declaration of 'Dia'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(13,1): error C2011: 'Log': 'class' type redefinition
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(12): message : see declaration of 'Log'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cListaT.h(1,9): warning C4068: unknown pragma
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cListaT.h(31,2): error C2953: 'cListaT': class template has already been defined
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cListaT.h(12): message : see declaration of 'cListaT'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10,16): error C2365: 'free': redefinition; previous definition was 'function'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_malloc.h(85): message : see declaration of 'free'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10,22): error C2365: 'basic': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10): message : see declaration of 'basic'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10,29): error C2365: 'premium': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10): message : see declaration of 'premium'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10,38): error C2371: 'eTipoUsuario': redefinition; different basic types
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10): message : see declaration of 'eTipoUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9,17): error C2365: 'enero': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9): message : see declaration of 'enero'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9,26): error C2365: 'febrero': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9): message : see declaration of 'febrero'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9,37): error C2365: 'marzo': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9): message : see declaration of 'marzo'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9,46): error C2365: 'abril': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9): message : see declaration of 'abril'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9,55): error C2365: 'mayo': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9): message : see declaration of 'mayo'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9,63): error C2365: 'junio': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9): message : see declaration of 'junio'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9,72): error C2365: 'julio': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9): message : see declaration of 'julio'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9,81): error C2365: 'agosto': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9): message : see declaration of 'agosto'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9,91): error C2365: 'septiembre': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9): message : see declaration of 'septiembre'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9,105): error C2365: 'octubre': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9): message : see declaration of 'octubre'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9,117): error C2365: 'noviembre': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9): message : see declaration of 'noviembre'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9,131): error C2365: 'diciembre': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9): message : see declaration of 'diciembre'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9,146): error C2371: 'Mes': redefinition; different basic types
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(9): message : see declaration of 'Mes'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(10,16): error C2365: 'lunes': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(10): message : see declaration of 'lunes'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(10,25): error C2365: 'martes': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(10): message : see declaration of 'martes'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(10,35): error C2365: 'miercoles': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(10): message : see declaration of 'miercoles'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(10,48): error C2365: 'jueves': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(10): message : see declaration of 'jueves'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(10,58): error C2365: 'viernes': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(10): message : see declaration of 'viernes'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(10,69): error C2365: 'sabado': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(10): message : see declaration of 'sabado'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(10,79): error C2365: 'domingo': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(10): message : see declaration of 'domingo'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(10,91): error C2371: 'Dia': redefinition; different basic types
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Log.h(10): message : see declaration of 'Dia'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Logger.h(9,1): error C2011: 'Logger': 'class' type redefinition
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Logger.h(8): message : see declaration of 'Logger'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10,16): error C2365: 'free': redefinition; previous definition was 'function'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_malloc.h(85): message : see declaration of 'free'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10,22): error C2365: 'basic': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10): message : see declaration of 'basic'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10,29): error C2365: 'premium': redefinition; previous definition was 'enumerator'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10): message : see declaration of 'premium'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10,38): error C2371: 'eTipoUsuario': redefinition; different basic types
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cUsuario.h(10): message : see declaration of 'eTipoUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\main.cpp(19,1): warning C4005: 'NMAX': macro redefinition
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cListaT.h(3): message : see previous definition of 'NMAX'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\main.cpp(31,32): error C2514: 'cListaT': class template cannot be constructed
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cListaT.h(12): message : see declaration of 'cListaT'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\main.cpp(32,32): error C2514: 'cListaT': class template cannot be constructed
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cListaT.h(12): message : see declaration of 'cListaT'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\main.cpp(123,112): error C2027: use of undefined type 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.h(16): message : see declaration of 'cUsuario'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\main.cpp(129,9): error C2374: 'pais': redefinition; multiple initialization
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\main.cpp(103): message : see declaration of 'pais'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\main.cpp(130,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\main.cpp(134,19): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\main.cpp(164,19): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\main.cpp(179,16): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\main.cpp(207,16): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\main.cpp(239,15): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\main.cpp(269,24): error C2662: 'bool cListaT<T>::Agregar(T *)': cannot convert 'this' pointer from 'cListaT' to 'cListaT<T> &'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\main.cpp(269,24): message : Reason: cannot convert from 'cListaT' to 'cListaT<T>'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\main.cpp(269,2): message : Conversion requires a second user-defined-conversion operator or constructor
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cListaT.h(23,7): message : see declaration of 'cListaT<T>::Agregar'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\main.cpp(270,27): error C2662: 'bool cListaT<T>::Agregar(T *)': cannot convert 'this' pointer from 'cListaT' to 'cListaT<T> &'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\main.cpp(270,27): message : Reason: cannot convert from 'cListaT' to 'cListaT<T>'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\main.cpp(270,2): message : Conversion requires a second user-defined-conversion operator or constructor
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cListaT.h(23,7): message : see declaration of 'cListaT<T>::Agregar'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\main.cpp(276,62): error C2664: 'cStreaming::cStreaming(const cStreaming &)': cannot convert argument 3 from 'cListaT *' to 'cListaT &'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.h(29,2): message : see declaration of 'cStreaming::cStreaming'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\main.cpp(285,18): error C2079: 'historial' uses undefined class 'Logger'
-C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\main.cpp(25): fatal error C1075: '{': no matching token found
+C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\generator.h(106,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\generator.h(110,19): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\generator.h(138,19): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\generator.h(152,16): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\generator.h(176,16): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\generator.h(205,13): warning C4018: '<': signed/unsigned mismatch
   Generating Code...
+cStreaming.obj : error LNK2019: unresolved external symbol "public: __thiscall cListaT<class cService>::cListaT<class cService>(unsigned int)" (??0?$cListaT@VcService@@@@QAE@I@Z) referenced in function "public: __thiscall cStreaming::cStreaming(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0cStreaming@@QAE@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+cStreaming.obj : error LNK2019: unresolved external symbol "public: __thiscall cListaT<class cService>::~cListaT<class cService>(void)" (??1?$cListaT@VcService@@@@QAE@XZ) referenced in function __unwindfunclet$??0cStreaming@@QAE@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z$1
+cStreaming.obj : error LNK2019: unresolved external symbol "public: bool __thiscall cListaT<class cService>::Agregar(class cService *)" (?Agregar@?$cListaT@VcService@@@@QAE_NPAVcService@@@Z) referenced in function "public: void __thiscall cStreaming::AgregarService(class cService *)" (?AgregarService@cStreaming@@QAEXPAVcService@@@Z)
+cStreaming.obj : error LNK2019: unresolved external symbol "public: class cService * __thiscall cListaT<class cService>::get(int)" (?get@?$cListaT@VcService@@@@QAEPAVcService@@H@Z) referenced in function "public: void __thiscall cStreaming::Explorar(class cUsuario *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?Explorar@cStreaming@@QAEXPAVcUsuario@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+cStreaming.obj : error LNK2019: unresolved external symbol "public: int __thiscall cListaT<class cService>::getCA(void)" (?getCA@?$cListaT@VcService@@@@QAEHXZ) referenced in function "public: void __thiscall cStreaming::Explorar(class cUsuario *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?Explorar@cStreaming@@QAEXPAVcUsuario@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+cStreaming.obj : error LNK2019: unresolved external symbol "public: __thiscall cListaT<class cUsuario>::cListaT<class cUsuario>(unsigned int)" (??0?$cListaT@VcUsuario@@@@QAE@I@Z) referenced in function "public: __thiscall cStreaming::cStreaming(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0cStreaming@@QAE@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+cStreaming.obj : error LNK2019: unresolved external symbol "public: __thiscall cListaT<class cUsuario>::~cListaT<class cUsuario>(void)" (??1?$cListaT@VcUsuario@@@@QAE@XZ) referenced in function __unwindfunclet$??0cStreaming@@QAE@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z$2
+cStreaming.obj : error LNK2019: unresolved external symbol "public: bool __thiscall cListaT<class cUsuario>::Agregar(class cUsuario *)" (?Agregar@?$cListaT@VcUsuario@@@@QAE_NPAVcUsuario@@@Z) referenced in function "public: void __thiscall cStreaming::AgregarUsuario(class cUsuario *)" (?AgregarUsuario@cStreaming@@QAEXPAVcUsuario@@@Z)
+cStreaming.obj : error LNK2019: unresolved external symbol "public: class cUsuario * __thiscall cListaT<class cUsuario>::get(int)" (?get@?$cListaT@VcUsuario@@@@QAEPAVcUsuario@@H@Z) referenced in function "public: void __thiscall cStreaming::Simulacion(void)" (?Simulacion@cStreaming@@QAEXXZ)
+cStreaming.obj : error LNK2019: unresolved external symbol "public: class cUsuario * __thiscall cListaT<class cUsuario>::Buscar(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?Buscar@?$cListaT@VcUsuario@@@@QAEPAVcUsuario@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) referenced in function "public: bool __thiscall cStreaming::Loguearse(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?Loguearse@cStreaming@@QAE_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z)
+cStreaming.obj : error LNK2019: unresolved external symbol "public: int __thiscall cListaT<class cUsuario>::getCA(void)" (?getCA@?$cListaT@VcUsuario@@@@QAEHXZ) referenced in function "public: void __thiscall cStreaming::Simulacion(void)" (?Simulacion@cStreaming@@QAEXXZ)
+Logger.obj : error LNK2001: unresolved external symbol "public: static class Log * * Logger::historial" (?historial@Logger@@2PAPAVLog@@A)
+main.obj : error LNK2001: unresolved external symbol "public: static class Log * * Logger::historial" (?historial@Logger@@2PAPAVLog@@A)
+C:\Users\Owne\source\repos\TP-FINAL\Debug\TP final 3.0.exe : fatal error LNK1120: 12 unresolved externals

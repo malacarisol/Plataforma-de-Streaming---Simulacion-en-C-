@@ -1,5 +1,6 @@
 #include "cListaT.h"
 
+
 template<class T>
 cListaT<T>::cListaT(unsigned int TAM)
 {
@@ -12,6 +13,8 @@ cListaT<T>::cListaT(unsigned int TAM)
 	this->TAM = TAM;
 	CA = 0;
 }
+
+
 
 template<class T>
 cListaT<T>::~cListaT()
@@ -91,7 +94,7 @@ template<class T>
 }
 
 template<class T>
- unsigned int cListaT<T>::getCA()
+  int cListaT<T>::getCA()
 {
 	return CA;
 }
@@ -107,3 +110,13 @@ template<class T>
 	}
 	return 0; // para no tener que agarrar todas las excepciones en el main
 }
+ //template <class T>
+ //T* cListaT<T>::operator[](int pos)
+ //{
+	// if (pos < CA)
+	//	 return lista[pos];
+	// else return NULL;
+
+ //}
+
+

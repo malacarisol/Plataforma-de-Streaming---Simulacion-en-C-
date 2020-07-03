@@ -1,11 +1,6 @@
 #include "cUsuario.h"
 
 
-double cUsuario::difftime(time_t time2, time_t time1)
-{
-	return 0.0;
-}
-
 cUsuario::cUsuario(int edad, string usuario, string hashpassword, bool conectado, string pais, string apellido, string nombre, eTipoUsuario tipo) :pais(pais),apellido(apellido),nombre(nombre)
 {
 	this->edad = edad;
@@ -29,8 +24,8 @@ cUsuario::~cUsuario()
 
 time_t cUsuario::online()//cambia el estado del usuario a online 
 {
-	if (conectado)//Una vez q se la llama ya cambia el estado del usuario a online, metodo inutil
-		return;
+	if (conectado)
+		return 0;
 	else
 		conectado = true;
 	
@@ -59,9 +54,5 @@ string cUsuario::getPassword()
 {
 	return hashpassword;
 
-}
-eTipoUsuario cUsuario::getTipo()
-{
-	return tipo;
 }
 

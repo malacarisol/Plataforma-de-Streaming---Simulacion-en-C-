@@ -1,6 +1,6 @@
 #include "Log.h"
 
-Log::Log(string username, string nombreServicio, time_t tiempo, eTipoUsuario tipoU, tipoServicio tipoS, Mes mes, Dia dia,int anio)
+Log::Log(string username, string nombreServicio, double tiempo, string tipoU, string tipoS, Mes mes, Dia dia, int anio)
 {
 	this->username = username;
 	this->nombreServicio = nombreServicio;
@@ -10,7 +10,7 @@ Log::Log(string username, string nombreServicio, time_t tiempo, eTipoUsuario tip
 	this->mes = mes;
 	this->dia = dia;
 	this->anio = anio;
-}
+};
 
 Log::~Log()
 {

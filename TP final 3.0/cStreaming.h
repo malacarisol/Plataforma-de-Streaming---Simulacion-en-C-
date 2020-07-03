@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include "stdlib.h"
 #include <string>
@@ -10,29 +11,26 @@
 
 using namespace std;
 
-class cJuegos;
-class cPeliculas;
-class cMusica;
-class cUsuario;
-
 class cStreaming
 {
-	cListaT<cService>* Servicios;
-	cListaT<cUsuario>* Usuarios;
+	cListaT<cService> Servicios;
+	cListaT<cUsuario> Usuarios;
+
 	string nombre;
 
-	static string masEscuchados;
+public:
+	void AgregarService(cService* algo);
+	void AgregarUsuario(cUsuario* user);
+	static string masEscuchados;	
 	static string masVistas;
 	static string masJugados;
-
-public:
-	cStreaming(string nombre, cListaT<cService> &ListaServicios, cListaT<cUsuario> &ListaUsuarios);
-	~cStreaming();
 	bool Loguearse(string username, string password);
-	void Explorar(cUsuario* user, tipoServicio tipoS);                 //muestra el contenido al usuario
+	void Explorar(cUsuario* user, string tipoS);                 //muestra el contenido al usuario
 	void Simulacion();                                             //conecta usuarios y inicia un servicio al azar creando logs
-	void Listarnovedades(tipoServicio serv);                 //solo se implementa si el usuario es free, le muestra las novedades
-
+	void Listarnovedades(string serv);                 //solo se implementa si el usuario es free, le muestra las novedades
+	
+	cStreaming(string nombre);
+	~cStreaming();
 };
 
 

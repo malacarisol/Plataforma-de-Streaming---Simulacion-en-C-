@@ -1,13 +1,10 @@
-#pragma oNce
-#include <string>
-#define NMAX 1000
-#include <string>
-#include <string>
-#include <string>
+#pragma once
+#include <iostream>
+#define NMAX 100
+
 #include <string>
 
 using namespace std;
-
 template<class T>
 class  cListaT
 {
@@ -27,6 +24,10 @@ public:
 	T* Buscar(string nombre);
 	unsigned int GetPos(string nombre);
 	unsigned int getTamanio();
-	unsigned int getCA();
+	 int getCA();
+	//T* operator[](int pos);
 };
 
+//template<cService> Servicios;
+
+//template<cUsuario>cListaT;

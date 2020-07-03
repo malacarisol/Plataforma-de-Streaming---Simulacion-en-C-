@@ -1,5 +1,5 @@
 #include "cService.h"
-include "cUsuario.h"
+#include "cUsuario.h"
 
 
 cService::cService(string nombre, bool mayorEdad, tipoServicio tipoS, vector<string> paisesProhibidos):tipoS(tipoS)
@@ -29,16 +29,16 @@ void cService::Apagar()
 	cout << "End" << endl;
 }
 
-void cService::Descargar(cUsuario* user1, string nombre)
-{
-	user1->getVectorDescargas().push_back(nombre);
-}
-bool cService::AgregarFavoritos(cUsuario* user1,string nombre)
-{
-	if (user1->favoritos.push_back(nombre))
-		return true;
-	else return false;
-}
+//void cService::Descargar(cUsuario *user1, string nombre)
+//{
+//	user1->descargas.push_back(nombre);
+//}
+//bool cService::AgregarFavoritos(cUsuario* user2,string nombre)
+//{
+//	user2->favoritos.push_back(nombre);
+//	return true;
+//
+//}
 bool cService::IsProhibidoPais(string pais)
 {
 	if (find(this->paisesprohibidos.begin(), this->paisesprohibidos.end(), pais) != this->paisesprohibidos.end())

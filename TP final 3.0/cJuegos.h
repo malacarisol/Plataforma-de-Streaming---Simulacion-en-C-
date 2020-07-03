@@ -1,5 +1,9 @@
+#pragma once
 #include "cService.h"
-enum eJuegos { accion, puzzle, aventura, azar, multijugadores, estrategia };
+
+
+//ERROR: CLASS TYPE REDEFINITION
+
 
 class cJuegos : public cService
 {
@@ -14,7 +18,7 @@ public:
 	void Iniciar();
 	void Pausar(int segundos);
 	void Apagar();
-	void Descargar();                                       //no se puede descargar un juego
+	void Descargar();                             //no se puede descargar un juego
 
 
 };

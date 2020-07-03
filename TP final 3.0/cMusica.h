@@ -1,9 +1,6 @@
+#pragma once
 #include "iostream"
 #include "cService.h"
-
-enum  eCategoria 
-{pop, rock, cumbia, reggaeton, reggae, softPop, ritmosUrbanos, metal, sleep, workOut, chill, electronica, jazz};
-
 
 class cMusica : public cService
 {

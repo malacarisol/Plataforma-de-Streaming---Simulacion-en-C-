@@ -1,7 +1,6 @@
 #pragma once
 #include "cService.h"
 
-enum ePeliculas {terror, comedia, suspenso,  drama, romantica, cienciaFiccion, policial, infantil, clasica, musical};
 
 
 class cPeliculas : public cService
