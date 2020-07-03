@@ -4,6 +4,7 @@
 
 class cMusica : public cService
 {
+	int tiempo;
 	int duracion;
 	eCategoria categoria;
 public:
@@ -16,5 +17,6 @@ public:
 	void Pausar(int segundos);
 	void Apagar();
 	void Descargar();
+	friend ostream& operator<<(ostream& out,cMusica&m);
 };
 

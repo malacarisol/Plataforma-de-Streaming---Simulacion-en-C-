@@ -14,8 +14,6 @@ cListaT<T>::cListaT(unsigned int TAM)
 	CA = 0;
 }
 
-
-
 template<class T>
 cListaT<T>::~cListaT()
 {
@@ -110,13 +108,13 @@ template<class T>
 	}
 	return 0; // para no tener que agarrar todas las excepciones en el main
 }
- //template <class T>
- //T* cListaT<T>::operator[](int pos)
- //{
-	// if (pos < CA)
-	//	 return lista[pos];
-	// else return NULL;
+ template <class T>
+ T* cListaT<T>::operator[](int pos)
+ {
+	 if (pos < CA)
+		 return lista[pos];
+	 else return NULL;
 
- //}
+ }
 
 

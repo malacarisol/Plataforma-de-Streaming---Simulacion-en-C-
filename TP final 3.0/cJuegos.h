@@ -1,6 +1,6 @@
 #pragma once
 #include "cService.h"
-
+#include <iostream>
 
 //ERROR: CLASS TYPE REDEFINITION
 
@@ -14,11 +14,9 @@ class cJuegos : public cService
 public:
 	cJuegos(int nivel, eJuegos juego, string nombre, bool mayorEdad, tipoServicio tipoS,vector<string> paisesProhibidos);
 	~cJuegos();
-	void GuardarPartida();                                    //se guarda el nivel actual
+	void GuardarPartida(int nivelactual);                                    //se guarda el nivel actual
 	void Iniciar();
-	void Pausar(int segundos);
 	void Apagar();
-	void Descargar();                             //no se puede descargar un juego
 
-
+	friend ostream& operator<<(ostream& out, cJuegos& m);
 };

@@ -25,7 +25,7 @@ public:
 	unsigned int GetPos(string nombre);
 	unsigned int getTamanio();
 	 int getCA();
-	//T* operator[](int pos);
+	T* operator[](int pos);
 };
 
 //template<cService> Servicios;

@@ -49,7 +49,7 @@ void cStreaming::Listarnovedades(string serv)
 	Mes mes2 = static_cast<Mes>(rand() % diciembre);
 	Dia dia2 = static_cast<Dia>(rand() % domingo);
 	int anio = rand() % 2000 + 2021;
-	enum tipoServicio { juegos, peliculas, musica };
+	
 	if(serv.compare("juegos"))
 	static string lista = Logger::MasJugados(mes, dia, mes2, dia2,anio);
 	if(serv.compare("peliculas"))
@@ -61,26 +61,26 @@ void cStreaming::Listarnovedades(string serv)
 void cStreaming::Explorar(cUsuario* user, string tipoS)                              //es un ejemplo, la idea es que pueda explorar con mas filtros
 {
 	
-	if (user->getTipo().compare( "gratis")==0)                                                         // free muestra menos contenido
+	if (user->getTipo().compare("gratis")==0)                                                         // free muestra menos contenido
 	{
-		for (unsigned int i = 0;i < Servicios.getCA() ;i++)                                   //la division limita los servicios mostrados
+		for (unsigned int i = 0;i < Servicios.getCA() /3;i++)                                   //la division limita los servicios mostrados
 		{
 
 			cService* serv = Servicios.get(i);                             //El get de lista<t> devuelve un puntero tomando una posicion como referencia
 
 			if (serv->getTipo().compare(tipoS)==0 && !serv->IsProhibidoPais(user->getPais()))                 //si es el tipo de servicio que quiere explorar y si el pais del usuario no se encuentra entre los prohibidos
-				cout << serv->getNombre() << endl;                                                       //Lista solo los nombres disponibles
+				cout << serv << endl;    //sobrecarga                                                   //Lista solo los nombres disponibles
 
 		}
 	}
 	else if (user->getTipo().compare("basic")==0)                                                     //basic muestra un poco mas de contenido
-		for (unsigned int i = 0;i <Servicios.getCA();i++)                   //la division limita los servicios mostrados
+		for (unsigned int i = 0;i <Servicios.getCA()/2;i++)                   //la division limita los servicios mostrados
 		{
 			cService* serv =Servicios.get(i);
 			
 			if(serv->getTipo().compare(tipoS)==0)
 				if(!serv->IsProhibidoPais(user->getPais()))                //si es el tipo de servicio que quiere explorar y si el pais del usuario no se encuentra entre los prohibidos
-			cout<<serv->getNombre()<<endl;                                    //Lista solo los nombres disponibles
+			cout<<serv<<endl;                                    //Lista solo los nombres disponibles
 			
 		}
 	
@@ -90,7 +90,7 @@ void cStreaming::Explorar(cUsuario* user, string tipoS)                         
 		{
 			cService* serv = Servicios.get(i);
 			if (serv->getTipo().compare(tipoS)==0&& !serv->IsProhibidoPais(user->getPais()))                 //si es el tipo de servicio que quiere explorar y si el pais del usuario no se encuentra entre los prohibidos
-				cout << serv->getNombre() << endl;                                     //Lista solo los nombres disponibles
+				cout << serv << endl;                                     //Lista solo los nombres disponibles
 		}
 		
 	}
@@ -110,25 +110,44 @@ void cStreaming::Simulacion()
 		unsigned int pos2 = rand() % Servicios.getCA();
 
 		cUsuario* user = Usuarios.get(pos);                         //Elige un usuario al azar
+		cService* serv = Servicios.get(pos2);                  //Elige un servicio al azar
 
 		if (Loguearse(user->getUsername(),user->getPassword()))                          //Checkea password
 		{
 			time_t inicio = user->online();
-			cService* serv = Servicios.get(pos2);                  //Elige un servicio al azar //LE SAQUE EL DYNAMIC CAST, INNECESARIO(QUIZAS NO) -S.
+			
 			if (user->getTipo().compare("gratis")==0)                                       //Si el tipo de User es Free, se listan las novedades
 			{
 				Listarnovedades(serv->getTipo());
 				user->getanuncios();                             //se prenden los anuncios para los usuarios free
 			}
 			Explorar(user, serv->getTipo());                   //muestra el servicio segun el tipo de usuario y pais
-			//user->Play(serv);
+			
 			serv->Iniciar();
+			serv->Pausar( rand()%60);
 			serv->Apagar();
+			cout<<"Desea agregar a favoritos?"<<endl;
+			srand(time(NULL));
+
+			int opcion = rand() % (2 - 1);
+			if (opcion == 1)
+				serv->AgregarFavoritos(user, serv->getNombre());
+     
+			if (user->getTipo().compare("premium") == 0)
+			{
+				cout << "Desea agregar a descargas?" << endl;
+				srand(time(NULL));
+
+				int opcion = rand() % (2 - 1);
+				if (opcion == 1)
+					serv->Descargar(user, serv->getNombre());
+			}
+		  
 			time_t fin = user->offline();
 			double tiemppo = static_cast<double>(difftime(inicio, fin));
 			
 			Log* ptr = new Log(user->getUsername(), serv->getNombre(), tiemppo, user->getTipo(), serv->getTipo(), mes, dia, anio);
-			Logger::agregar(ptr);  //AAAAAAAAAAAAAAAAAAAAAAAAAAa ERROR: MUST HAVE POINTER TO CLASS TYPE!!!!!!!
+			Logger::agregar(ptr);  
 		}
 
 		throw new exception("Error al cargar el servicio");

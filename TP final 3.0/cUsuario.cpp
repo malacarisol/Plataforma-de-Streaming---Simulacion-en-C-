@@ -10,16 +10,13 @@ cUsuario::cUsuario(int edad, string usuario, string hashpassword, bool conectado
 	this->tipo = tipo;
 	this->tiempoON=0;
 	this->tiempoOFF=0;
+	setCuota();
 }
 
 cUsuario::~cUsuario()
 {
 }
-//
-//void cUsuario::Play(cService serv)
-//{
-//	serv.
-//}
+
 
 
 time_t cUsuario::online()//cambia el estado del usuario a online 
@@ -34,9 +31,9 @@ time_t cUsuario::online()//cambia el estado del usuario a online
 	
 }
 
-void cUsuario::setCuota(int c)
+void cUsuario::setCuota()
 {
-	this->cuota = c;
+	this->cuota = static_cast<int>(tipo);
 }
 
 time_t cUsuario::offline()//cambia el estado a offline

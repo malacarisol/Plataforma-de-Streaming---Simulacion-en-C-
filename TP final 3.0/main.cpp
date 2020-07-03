@@ -47,10 +47,7 @@ int main()
 	Dia diaF = static_cast<Dia>(7);
 	int year = rand() % (2000 + 2021);
 
-		 //estadisticas diarias y semanales
-	Logger::MasJugados(mesI, diaI, mesF, diaF, year);
-	Logger::MasVisto(mesI, diaI, mesF, diaF, year);
-	Logger::MasEscuchados(mesI, diaI, mesF, diaF, year);
+		 //estadisticas diarias y semanales , los mas vistos etc estan en estadisticas semanales
 	Logger::PromedioUsuarios(mesI, diaI, mesF, diaF, year);
 
 

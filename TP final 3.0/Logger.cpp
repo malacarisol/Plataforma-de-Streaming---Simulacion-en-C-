@@ -19,9 +19,9 @@ Logger::~Logger()
 
 bool Logger::agregar(Log *probando)
 {
-	if (ca < tam)
+	if (ca < (tam-1))
 	{
-		historial[ca] = probando;
+		historial[ca++] = probando;
 		return true;          //checkear
 	}
 

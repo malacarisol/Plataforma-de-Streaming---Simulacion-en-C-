@@ -1,8 +1,20 @@
-﻿  cStreaming.cpp
+﻿  cJuegos.cpp
+C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cJuegos.cpp(28,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  cMusica.cpp
+  cPeliculas.cpp
+  cService.cpp
+  cStreaming.cpp
 C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.cpp(66,29): warning C4018: '<': signed/unsigned mismatch
 C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.cpp(77,29): warning C4018: '<': signed/unsigned mismatch
 C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.cpp(89,29): warning C4018: '<': signed/unsigned mismatch
 C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.cpp(104,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.cpp(130,14): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\cStreaming.cpp(139,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  cUsuario.cpp
+  Log.cpp
+  Logger.cpp
+C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Logger.cpp(37,16): warning C4244: '=': conversion from 'double' to 'time_t', possible loss of data
+C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\Logger.cpp(148,14): warning C4244: 'return': conversion from 'long' to 'float', possible loss of data
   main.cpp
 C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\generator.h(106,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
 C:\Users\Owne\source\repos\TP-FINAL\TP final 3.0\generator.h(110,19): warning C4018: '<': signed/unsigned mismatch

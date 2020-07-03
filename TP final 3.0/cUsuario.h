@@ -8,12 +8,13 @@
 
 using namespace std;
 
-typedef enum { gratis , basic, premium } eTipoUsuario;  //CAMBIAMOS FREE A GRATIS POR PROBLEMAS DE REDEFINICION
+typedef enum { gratis=200 , basic=300, premium=400 } eTipoUsuario;  //CAMBIAMOS FREE A GRATIS POR PROBLEMAS DE REDEFINICION
 
 class cUsuario
 {
-	private:
-		//friend class cService;
+	friend class cService;
+
+	private:	
 	int edad;
 	string usuario;
 	string hashpassword;
@@ -36,10 +37,7 @@ public:
 	
 	eTipoUsuario tipo;
 
-	//void Play(cService *serv);
-	//eTipoUsuario col = eTipoUsuario::basic;
-
-	void setCuota(int c);
+	void setCuota();
 	time_t offline();
 	time_t online();
 
@@ -56,7 +54,8 @@ public:
 		if (anuncios != true)
 			anuncios = true;
 	};
-
+	vector<string> getdescargas() { return descargas; };
+	vector<string>getFavoritos() { return favoritos; };
 	cUsuario(int edad, string usuario, string hashpassword, bool conectado, string pais, string apellido, string nombre, eTipoUsuario tipo);
 	~cUsuario();
 };
