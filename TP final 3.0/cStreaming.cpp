@@ -2,18 +2,19 @@
 #include "cService.h"
 #include "Log.h"
 #include <ctime>
-//#include "main.cpp"
+#include "cPeliculas.h"
+#include "cJuegos.h"
+#include "cMusica.h"
+#include <exception>
 
 using namespace std;
+
 
 cStreaming::cStreaming(string nombre)
 {	
 	this->nombre = nombre;
 };
 
-string cStreaming::masEscuchados = "";
-string cStreaming::masJugados = "";
-string cStreaming::masVistas = "";//inicializamos
 
 cStreaming::~cStreaming()
 {
@@ -21,18 +22,18 @@ cStreaming::~cStreaming()
 
 void cStreaming::AgregarService(cService* algo)
 {
-	Servicios.Agregar(algo);
+	Servicios + algo;         //sobrecarga +
 }
 
 void cStreaming::AgregarUsuario(cUsuario* user)
 {
-	Usuarios.Agregar(user);
+	Usuarios + user;
 }
 
 bool cStreaming::Loguearse(string username, string password)
 {
 	cUsuario* aux= Usuarios.Buscar(username);
-	if (aux != NULL && aux->getPassword() == password)
+	if (aux != NULL && aux->getPassword().compare(password)==0)
 	{
 		return true;
 	}
@@ -40,119 +41,163 @@ bool cStreaming::Loguearse(string username, string password)
 	
 	return false;
 }
-void cStreaming::Listarnovedades(string serv)
+
+
+void cStreaming::Listarnovedades(int serv)
 {
 
-	srand((unsigned)time(NULL));             //agarro dos fechas al azar  
-	Mes mes = static_cast<Mes>(rand() % diciembre);
-	Dia dia = static_cast<Dia>(rand() % domingo);
-	Mes mes2 = static_cast<Mes>(rand() % diciembre);
-	Dia dia2 = static_cast<Dia>(rand() % domingo);
-	int anio = rand() % 2000 + 2021;
+	srand(time(NULL));
+	int cont = 0;
+
+	cout<<"----------------NOVEDADES------------------"<<endl<<endl;
+
+	for (int i = 0;i < Servicios.getCA();i++)            //Se listan las primeras posiciones encontradas de el tipo de servicio seleccionado. Esas son las novedades
+	{
+		if (Servicios[i]->getTipo() == serv)
+		{
+			cout << Servicios[i]->getNombre() << endl;
+			cont++;
+		}if (cont == 5)break;
+	}
+	cout << endl << endl;
 	
-	if(serv.compare("juegos"))
-	static string lista = Logger::MasJugados(mes, dia, mes2, dia2,anio);
-	if(serv.compare("peliculas"))
-	static string lista = Logger::MasVisto(mes, dia, mes2, dia2,anio);
-	if(serv.compare("musica"))
-	static string lista = Logger::MasEscuchados(mes, dia, mes2, dia2,anio);
 }
 
-void cStreaming::Explorar(cUsuario* user, string tipoS)                              //es un ejemplo, la idea es que pueda explorar con mas filtros
+
+void cStreaming::Explorar(cUsuario* user, int tipoS)
 {
-	
-	if (user->getTipo().compare("gratis")==0)                                                         // free muestra menos contenido
+	int seguro = 0;           //El seguro es para que se pare el servicio si el pais del uuario coincide con la lista de paisesprohbidos.
+	int contFree = 0;
+	int contBasic = 0;
+
+	for (unsigned int i = 0;i < Servicios.getCA();i++)
 	{
-		for (unsigned int i = 0;i < Servicios.getCA() /3;i++)                                   //la division limita los servicios mostrados
+		if (Servicios[i]->getTipo() == tipoS && !Servicios[i]->IsProhibidoPais(user->getPais()) && user->getedad() > 18)  //si es el tipo de servicio que quiere explorar y si el pais del usuario no se encuentra entre los prohibidos
 		{
 
-			cService* serv = Servicios.get(i);                             //El get de lista<t> devuelve un puntero tomando una posicion como referencia
-
-			if (serv->getTipo().compare(tipoS)==0 && !serv->IsProhibidoPais(user->getPais()))                 //si es el tipo de servicio que quiere explorar y si el pais del usuario no se encuentra entre los prohibidos
-				cout << serv << endl;    //sobrecarga                                                   //Lista solo los nombres disponibles
-
+			cout << left << Servicios[i];
+			cout << setw(40);
+			cout << right << "CATEGORIA:";
+			if (Servicios[i]->getTipo() == juegos) {
+				cJuegos* juego = dynamic_cast<cJuegos*>(Servicios[i]);
+				cout << juego->getCategoria() << endl;
+			}
+			else if (Servicios[i]->getTipo() == peliculas) {
+				cPeliculas* pelicula = dynamic_cast<cPeliculas*>(Servicios[i]);
+				cout << pelicula->getCategoria() << endl;
+			}
+			else if (Servicios[i]->getTipo() == musica) {
+				cMusica* cancion = dynamic_cast<cMusica*>(Servicios[i]);
+				cout << cancion->getCategoria() << endl;
+			}
+			if (user->getTipo() == 0)
+				contFree++;
+			else if (user->getTipo() == 1)
+				contBasic++;
+			seguro++;
+		}                                                //Lista solo los nombres disponibles
+		else if (Servicios[i]->getTipo() == tipoS && !Servicios[i]->IsProhibidoPais(user->getPais()) && !Servicios[i]->MayorEdad() && user->getedad() < 18)
+		{
+			cout << left << Servicios[i];
+			cout << setw(40);
+			cout << right << "CATEGORIA:";
+			if (Servicios[i]->getTipo() == juegos) {
+				cJuegos* juego = dynamic_cast<cJuegos*>(Servicios[i]);
+				cout << juego->getCategoria() << endl;
+			}
+			else if (Servicios[i]->getTipo() == peliculas) {
+				cPeliculas* pelicula = dynamic_cast<cPeliculas*>(Servicios[i]);
+				cout << pelicula->getCategoria() << endl;
+			}
+			else if (Servicios[i]->getTipo() == musica) {
+				cMusica* cancion = dynamic_cast<cMusica*>(Servicios[i]);
+				cout << cancion->getCategoria() << endl;
+			}
+			if (user->getTipo() == 0)
+				contFree++;
+			else if (user->getTipo() == 1)
+				contBasic++;
+			seguro++;
 		}
+
+		if (contFree == 8)               //FREE muestra menos contenido
+			break;
+		else if (contBasic == 20)
+			break;
 	}
-	else if (user->getTipo().compare("basic")==0)                                                     //basic muestra un poco mas de contenido
-		for (unsigned int i = 0;i <Servicios.getCA()/2;i++)                   //la division limita los servicios mostrados
-		{
-			cService* serv =Servicios.get(i);
-			
-			if(serv->getTipo().compare(tipoS)==0)
-				if(!serv->IsProhibidoPais(user->getPais()))                //si es el tipo de servicio que quiere explorar y si el pais del usuario no se encuentra entre los prohibidos
-			cout<<serv<<endl;                                    //Lista solo los nombres disponibles
-			
-		}
-	
-	else if (user->getTipo().compare("premium")==0)                                 //muestra todo el contenido
-	{
-		for (unsigned int i = 0;i < Servicios.getCA();i++)
-		{
-			cService* serv = Servicios.get(i);
-			if (serv->getTipo().compare(tipoS)==0&& !serv->IsProhibidoPais(user->getPais()))                 //si es el tipo de servicio que quiere explorar y si el pais del usuario no se encuentra entre los prohibidos
-				cout << serv << endl;                                     //Lista solo los nombres disponibles
-		}
-		
-	}
+	if (seguro == 0)
+		throw new exception("Este servicio no se encuentra disponible para su pais");
+	//	cout << "La categoria ";
+	//print(tipoS);
+	//	cout<< " no se encuentra disponible para su pais" << endl;
+
 }
-void cStreaming::Simulacion()
+void cStreaming::Simulacion(int pos,int pos2, int dia, Mes mes, int anio)
 {
-	//if (Servicios == NULL && Usuarios == NULL) /////// CHECKKKKKK//// //Si el primero es NULL, la lista esta vacia. Si no, el streaming ya puede comenzar a correr
-
-		//throw new exception("Error al cargar el servicio");
-	
 		srand(time(NULL));
-		Mes mes = static_cast<Mes>(rand() % diciembre);
-		Dia dia = static_cast<Dia>(rand() % domingo);
-		int anio = rand() % 21 + 2000;
-
-		unsigned int pos = rand() % Usuarios.getCA();
-		unsigned int pos2 = rand() % Servicios.getCA();
-
+		
 		cUsuario* user = Usuarios.get(pos);                         //Elige un usuario al azar
-		cService* serv = Servicios.get(pos2);                  //Elige un servicio al azar
+		cService* serv = Servicios.get(pos2);                   //Elige un servicio al azar
+	
+		try {
+			 Loguearse(user->getNombre(), user->getPassword());             //Checkea password
+			 system("color 0B");
+	
+			if (serv->getTipo() == 0)
+				cout << "················ G A M E S ··················"<<endl<<endl;
+			if (serv->getTipo() == 1)
+				cout << "··············· M O V I E S ·················"<<endl<<endl;
+			if (serv->getTipo() == 2)
+				cout << "················ M U S I C ··················"<<endl<<endl;
 
-		if (Loguearse(user->getUsername(),user->getPassword()))                          //Checkea password
-		{
-			time_t inicio = user->online();
-			
-			if (user->getTipo().compare("gratis")==0)                                       //Si el tipo de User es Free, se listan las novedades
-			{
-				Listarnovedades(serv->getTipo());
+
+			if (user->getTipo() == 0)                  
+			{ 
+				Listarnovedades(serv->getTipo());                 //Si el tipo de User es Free, se listan las novedades.
 				user->getanuncios();                             //se prenden los anuncios para los usuarios free
 			}
-			Explorar(user, serv->getTipo());                   //muestra el servicio segun el tipo de usuario y pais
-			
-			serv->Iniciar();
-			serv->Pausar( rand()%60);
-			serv->Apagar();
-			cout<<"Desea agregar a favoritos?"<<endl;
+
+			Explorar(user, serv->getTipo());                   //muestra el servicio segun el tipo de usuario, pais y edad
+
+			serv->Iniciar(user);
+			cout << endl << endl;
+
+			serv->Pausar(rand() % serv->getduracion());                        //se pausa dento del tiempo de duracion del servicio
+
+			serv->Apagar(user);
+
+			cout << "Desea agregar a favoritos?" << endl<<endl;
+
 			srand(time(NULL));
 
-			int opcion = rand() % (2 - 1);
+			int opcion = rand() %(2);
+
 			if (opcion == 1)
-				serv->AgregarFavoritos(user, serv->getNombre());
-     
-			if (user->getTipo().compare("premium") == 0)
 			{
-				cout << "Desea agregar a descargas?" << endl;
+				serv->AgregarFavoritos(user, serv->getNombre());          //si sale opcion 0 no agrega a favoritos!!!
+			}                                                        
+
+			if (user->getTipo() == 2 && (serv->getTipo()==musica||serv->getTipo()==peliculas))                             //solo los PREMIUM pueden descargar (2==enum==PREMIUM) 
+			{
+				cout << "Desea agregar a descargas?" << endl<<endl;
 				srand(time(NULL));
 
-				int opcion = rand() % (2 - 1);
+				int opcion = rand() % (2 );                    //la opcion de descarga es random no va a implementarse siempre descargar !!!
 				if (opcion == 1)
+				{
 					serv->Descargar(user, serv->getNombre());
+				}                                                          //si sale opcion 0 no agrega a descargas
 			}
-		  
-			time_t fin = user->offline();
-			double tiemppo = static_cast<double>(difftime(inicio, fin));
-			
-			Log* ptr = new Log(user->getUsername(), serv->getNombre(), tiemppo, user->getTipo(), serv->getTipo(), mes, dia, anio);
-			Logger::agregar(ptr);  
+
+			int tiemppo = serv->getTiempoActual();                      
+
+			Logger::logger.agregar(new Log(user->getNombre(), serv->getNombre(), tiemppo, user->getTipo(), serv->getTipo(), mes, dia, anio));
 		}
-
-		throw new exception("Error al cargar el servicio");
-		//HAY ECEPCIONES EN LOS METODOS QUE LLAMAMOS CHECKEAR QUE LOS AGARRE EN EL MAIN 
-		delete user;
-
+		catch (exception * e)
+		{
+			cout << e->what() << endl;
+		}
+		user = NULL;
+		serv = NULL;
 	
 };

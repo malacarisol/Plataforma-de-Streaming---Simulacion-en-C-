@@ -1,22 +1,21 @@
 #pragma once
 #include "cService.h"
 #include <iostream>
-
-//ERROR: CLASS TYPE REDEFINITION
+#include <time.h>
 
 
 class cJuegos : public cService
 {
-	int nivel;
+	int niveles;      //cantida de niveles en el juego
 	eJuegos catJuegos;
-	//enum class eJuegos { accion, puzzle, aventura, azar, multijugadores, estrategia };
-
 public:
-	cJuegos(int nivel, eJuegos juego, string nombre, bool mayorEdad, tipoServicio tipoS,vector<string> paisesProhibidos);
+	cJuegos(int duracion, int niveles, eJuegos juego, string nombre, bool mayorEdad, tipoServicio tipoS,vector<string> paisesProhibidos);
 	~cJuegos();
-	void GuardarPartida(int nivelactual);                                    //se guarda el nivel actual
-	void Iniciar();
-	void Apagar();
-
-	friend ostream& operator<<(ostream& out, cJuegos& m);
+	void GuardarPartida(cUsuario* user,int nivelactual);                                    //se guarda el nivel actual
+	void Iniciar(cUsuario* user);
+	void Pausar(int segundos);
+	string getCategoria();
+	void Apagar(cUsuario* user);        
+	int getNivelUser(cUsuario* user);
+	void Record();
 };

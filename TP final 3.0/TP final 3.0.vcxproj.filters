@@ -71,9 +71,6 @@
     <ClCompile Include="cJuegos.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="cListaT.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="cMusica.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

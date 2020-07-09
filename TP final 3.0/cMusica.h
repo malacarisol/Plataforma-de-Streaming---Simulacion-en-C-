@@ -1,22 +1,20 @@
 #pragma once
 #include "iostream"
 #include "cService.h"
-
+#include "time.h"
 class cMusica : public cService
 {
-	int tiempo;
-	int duracion;
-	eCategoria categoria;
+	eMusica categoria;
 public:
-	cMusica(int duracion,eCategoria categoria, string nombre, bool mayorEdad, tipoServicio tipoS, vector<string> paisesProhibidos);
+	cMusica(int duracion,eMusica categoria, string nombre, tipoServicio tipoS, vector<string> paisesProhibidos, bool mayorEdad = false);
 	~cMusica();
-	void Record();
 	void Fastforward();
 	void Backward();
-	void Iniciar();
+	void Iniciar(cUsuario* user);
 	void Pausar(int segundos);
-	void Apagar();
+	string getCategoria();
+	void Apagar(cUsuario* user);
 	void Descargar();
-	friend ostream& operator<<(ostream& out,cMusica&m);
+	
 };
 

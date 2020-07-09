@@ -1,40 +1,49 @@
 #include "cService.h"
 
 
-cService::cService(string nombre, bool mayorEdad, tipoServicio tipoS, vector<string> paisesProhibidos):tipoS(tipoS)
+
+cService::cService(int tiempoDuracion, string nombre, bool mayorEdad, tipoServicio tipoS, vector<string> paisesProhibidos) :tipoS(tipoS)
 {
 	this->nombre = nombre;
 	this->mayorEdad = mayorEdad;
-	this->paisesprohibidos = paisesProhibidos;    
-}
+	this->paisesprohibidos = paisesProhibidos;
+	this->duracion = tiempoDuracion;
+	this->TiempoActual = 0;
+};
 
 cService::~cService()
 {
 }
 
-void cService::Iniciar()
+void cService::Iniciar(cUsuario* user)
 {
-	cout << "Begin" << endl;
+	user->conectado = true;
 }
 
-void cService::Pausar(int segundos)   //implementado en las hijas
+void cService::Pausar(int segundos) 
 {
-	cout << "Pause" << endl;
+	this->TiempoActual = segundos;
 }
 
-void cService::Apagar()
+void cService::Apagar(cUsuario* user)
 {
-	cout << "End" << endl;
+	user->conectado = false;
+	this->TiempoActual = duracion; //Al cortar el servicio, el tiempo pasado en la plataforma es igual al tiempo de duracion del servicio
+}
+
+bool cService::MayorEdad()
+{
+	return mayorEdad; 
 }
 
 void cService::Descargar(cUsuario *nombre1, string nombre)
 {
-	nombre1->getdescargas().push_back(nombre);
+	nombre1->descargas.push_back(nombre);
+
 }
-bool cService::AgregarFavoritos(cUsuario* nombre2,string nombre)
+void cService::AgregarFavoritos(cUsuario* nombre2,string nombre)
 {
-	nombre2->getFavoritos().push_back(nombre);
-	return true;
+	nombre2->favoritos.push_back(nombre);
 
 }
 bool cService::IsProhibidoPais(string pais)
@@ -47,21 +56,33 @@ bool cService::IsProhibidoPais(string pais)
 	return false;
 }
 
-
-ostream& cService::operator<<(ostream& out)
+string cService::getNombre()
 {
-	cout << getNombre() << endl;
+	return nombre;
+}
+
+int cService::getTipo()
+{
+	return tipoS;
+}
+
+void cService::setNombre(string nombre)
+{
+	this->nombre = nombre;
+}
+
+int cService::getTiempoActual()
+{
+	return TiempoActual;
+}
+
+int cService::getduracion()
+{
+	return duracion;
+}
+
+ostream& operator<<(ostream &out, cService* serv)
+{
+	out << serv->getNombre() << endl;
 	return out;
-	// TODO: insert return statement here
 }
-
-istream& cService::operator>>(istream& in)
-{
-	// TODO: insert return statement here
-	string a;
-	cout << "Ingrese nombre del servicio" << endl;
-	in >> a;
-	setNombre(a);
-	return in;
-}
-

@@ -2,149 +2,205 @@
 using namespace std;
 
 
-Logger::Logger()
+Logger::Logger(int a)
 {
+	tam = a;
+	historial = new Log * [tam];
+	for (unsigned int i = 0; i < tam; i++)
+	{
+		historial[i] = NULL;
+	}
 
-}
-int Logger::ca = 0;
-int Logger::tam = nmax;
+	this->tam = tam;
+	ca = 0;
+};
 
 
+Logger Logger::logger;
 
 
 Logger::~Logger()
 {
+	if (historial != NULL)
+	{
+		for (unsigned int i = 0; i < ca; i++)
+		{
+			if (historial[i] != NULL)
+				delete historial[i];
+		}
+		delete[] historial;
+	}
 
 }
 
-bool Logger::agregar(Log *probando)
+bool Logger::agregar(Log *newlog)
 {
 	if (ca < (tam-1))
 	{
-		historial[ca++] = probando;
-		return true;          //checkear
+		this->historial[ca++] = newlog;
+		return true;          
 	}
 
 	else return false;
 }
 
-time_t Logger::tconexion(string user)//METODO NO STATIC CON LISTA STATIC
+
+void Logger::MasVisto(Mes desde, int desde_,int hasta_,int anio_)
 {
-	time_t time = 0;
-	for (int i =0;i<ca;i++)
-	{
-		if (Logger::historial[i]->getnombre().compare(user) == 0)
-			time = time + Logger::historial[i]->gettiempo();
-	}
-	return static_cast<long int> (time);
-
-}
-
-string Logger::MasVisto(Mes desde, Dia desde_, Mes hasta, Dia hasta_,int anio_)
-{
-	long int max=0;
-	int a = 0;
-
-	for (int i = 0;i < ca;i++)
-	{
-		if (historial[i]->getTipoServicio().compare("peliculas")==0&&historial[i]->getdia()>=desde_&&historial[i]->getdia()<=hasta_&&historial[i]->getmes()>=desde&&historial[i]->getmes()<=hasta&&historial[i]->getanio()==anio_)    //encuenctra el tiempo de la primer pelicula d ela lista
-		{
-			max = static_cast<long int> (historial[i]->gettiempo());
-			break;
-		}
-	}
-
-	for (int i=0;i<ca;i++)//compara los tiempos de las peliculas con el primero encontrado 
-	{
-		if ((historial[i]->getTipoServicio().compare("peliculas")==0&&historial[i]->getdia()>=desde_&&historial[i]->getdia()<=hasta_&&historial[i]->getmes()>=desde&&historial[i]->getmes()<=hasta&&historial[i]->getanio()==anio_))
-		{
-			long int t = static_cast<long int> (historial[i]->gettiempo());     //Estamos viendo cual fue la pelicula mas vista
-			if (t > max)         
-			{	max = t;
-				a=i;
-			}
-
-		}
-	}
-	return historial[a]->getnombreS();  //devolvemos nombre pelicula
-}
-
-string Logger::MasJugados(Mes desde, Dia desde_, Mes hasta, Dia hasta_,int anio_)
-{
-	long int max = 0;
-	int a = 0;
-
-	for (int i = 0;i < ca;i++)
-	{
-		if (historial[i]->getTipoServicio().compare("juegos")==0&&historial[i]->getdia()>=desde_&&historial[i]->getdia()<=hasta_&&historial[i]->getmes()>=desde&&historial[i]->getmes()<=hasta&&historial[i]->getanio()==anio_)   //encuenctra el tiempo de la primer pelicula d ela lista
-		{
-			max = static_cast<long int> (historial[i]->gettiempo());
-			break;
-		}
-	}
-
-	for (int i = 0;i < ca;i++)//compara los tiempos de las peliculas con el primero encontrado 
-	{
-		if (historial[i]->getTipoServicio().compare("juegos")==0&&historial[i]->getdia()>=desde_&&historial[i]->getdia()<=hasta_&&historial[i]->getmes()>=desde&&historial[i]->getmes()<=hasta&&historial[i]->getanio()==anio_) 
-		{
-			long int t = static_cast<long int> (historial[i]->gettiempo());     //Estamos viendo cual fue la pelicula mas vista
-			if (t > max)
-			{
-				max = t;
-				a = i;
-			}
-
-		}
-	}
-	return historial[a]->getnombreS();  //devolvemos nombre pelicula
-}
-
-string Logger::MasEscuchados(Mes desde, Dia desde_, Mes hasta, Dia hasta_,int anio_)
-{
-	long int max = 0;
-	int a = 0;
-	//for (int i = 0;i < ca;i++)
-	//{
-	//	if (log[i]->getTipoServicio == musica&&log[i]->getdia()>=static_cast<int>(desde_)&&log[i]->getdia()<= static_cast<int>(hasta_) &&log[i]->getmes()>= static_cast<int>(desde) &&log[i]->getmes()<= static_cast<int>(hasta) &&log[i]->getanio()==anio_)   //encuenctra el tiempo de la primer musica d ela lista
-	//	{
-	//		max = static_cast<long int> (log[i]->gettiempo());
-	//		break;
-	//	}
-	//}
-
-	for (int i = 0;i < ca;i++)//compara los tiempos de la musica con el primero encontrado 
-	{
-		if (historial[i]->getTipoServicio().compare("musica")==0&&historial[i]->getdia()>=desde_&&historial[i]->getdia()<=hasta_&&historial[i]->getmes()>=desde&&historial[i]->getmes()<=hasta&&historial[i]->getanio()==anio_)
-		{
-			long int t = static_cast<long int> (historial[i]->gettiempo());     //Estamos viendo cual fue la pelicula mas vista
-			if (t > max)
-			{
-				max = t;
-				a = i;
-			}
-
-		}
-	}
-	return historial[a]->getnombreS();  //devolvemos nombre musica
-}
-
-float Logger::PromedioUsuarios(Mes desde, Dia desde_, Mes hasta, Dia hasta_, int anio)
-{
-	long int acum = 0;              //acumula tiempo de uso de usuarios
 	int cont = 0;
-
-	for (int i = 0;i < ca;i++)
+	OrdenarHistorial();
+	cout << "MAS VISTAS: ";
+	cout << "PERIODO " << desde_ << "/" << desde << "/" << anio_ << "--" << hasta_ << "/" << desde << "/" << anio_ << endl << endl;
+	                                         
+	for (int i = 0;i < ca;i++)             
 	{
-		if (historial[i]->getdia() >= desde_ && historial[i]->getdia() <= hasta_ && historial[i]->getmes() >= desde && historial[i]->getmes() <= hasta && historial[i]->getanio() == anio)   //encuenctra el tiempo de la primer musica d ela lista
+		if (historial[i]->getTipoServicio() == 1 && historial[i]->getdia() >= desde_ && historial[i]->getdia() <= hasta_ && historial[i]->getmes() == desde&& historial[i]->getanio() == anio_)
 		{
-			acum = acum + static_cast<long int> (historial[i]->gettiempo());
+			while (i < ca - 1 && historial[i + 1]->getnombreS().compare(historial[i]->getnombreS()) == 0)
+			{
+				i++;      //Salteamos si son iguales los servicios
+			} 
+			cout << historial[i]->getnombreS() << endl;
+
 			cont++;
-			break;
 		}
 	}
 	if (cont == 0)
-		throw new exception("DIV_ZERO");
+		throw new exception("No se vieron peliculas en ese periodo ");
 
-	return acum / cont;
+}
 
+void Logger::MasJugados(Mes desde, int desde_, int hasta_, int anio_)
+{
+	int cont = 0;
+	OrdenarHistorial();
+	cout << "MAS JUGADOS: ";
+	cout << "PERIODO " << desde_ << "/" << desde << "/" << anio_ << "--" << hasta_ << "/" << desde << "/" << anio_ << endl << endl;
+
+	                                  
+	for (int i = 0;i < ca;i++)               
+	{
+			if (historial[i]->getTipoServicio() ==0  && historial[i]->getdia() >= desde_ && historial[i]->getdia() <= hasta_ && historial[i]->getmes() == desde  && historial[i]->getanio() == anio_)
+			{
+				while (i < ca - 1 && historial[i + 1]->getnombreS().compare(historial[i]->getnombreS()) == 0)
+				{
+					i++;      //Salteamos si son iguales los servicios
+				} 
+				cout<<historial[i]->getnombreS()<<endl;
+				cont++;
+			}
+	}	if (cont == 0)
+		throw new exception("No se jugaron juegos en ese periodo ");
+		
+	
+}
+
+void Logger::MasEscuchados(Mes desde, int desde_, int hasta_, int anio_)
+{
+	int cont = 0;
+	OrdenarHistorial();
+	cout << "MAS ESCUCHADAS: ";
+	cout << "PERIODO " << desde_ << "/" << desde << "/" << anio_ << "--" << hasta_ << "/" << desde << "/" << anio_ << endl << endl;
+
+
+		for (int i = 0;i < (int)(ca );i++)          
+		{
+			if (historial[i]->getTipoServicio() == 2 && historial[i]->getdia() >= desde_ && historial[i]->getdia() <= hasta_ && historial[i]->getmes() == desde && historial[i]->getanio() == anio_)
+			{
+				while (i < ca - 1 && historial[i + 1]->getnombreS().compare(historial[i]->getnombreS()) == 0)
+				{
+					i++;      //Salteamos si son iguales los servicios
+				} 
+				cout<<(historial[i]->getnombreS())<<endl;
+				cont++;
+			}
+		}
+		if (cont == 0)
+			throw new exception("No se escucharon canciones en ese periodo ");
+		
+	
+} 
+
+void Logger::PromUsuarioEspecifico(Mes desde, int desde_,  int hasta_, int anio,string username)
+{
+	int acum = 0;              //acumula tiempo de uso de usuarios
+	int cont = 0;
+	int acum2 = 0;
+	int cont2 = 0;
+
+
+	for (int i = 0;i < ca;i++)
+	{
+		if (historial[i]->getdia() >= desde_ && historial[i]->getdia() <= hasta_ && historial[i]->getmes() >= desde && historial[i]->getnombre().compare(username)==0)   //encuenctra el tiempo de la primer musica d ela lista
+		{
+			acum = acum + historial[i]->gettiempo();
+			cont++;
+			//break;
+		}
+		if (historial[i]->getdia() >= desde_ && historial[i]->getdia() <= hasta_ && historial[i]->getmes() == desde )  //promedio general
+		{
+			acum2 = acum2 + historial[i]->gettiempo();
+			cont2++;
+			//break;
+		}
+	}
+	if (cont == 0||cont2==0)
+		throw new exception("El usuario no ha pasado tiempo en la plataforma");
+	cout << "El usuario " << username << " tiene un tiempo promedio en la plataforma acumulado de: "<<acum / cont << " segundos" << endl<<endl;
+	cout << "promedio conexion general de todos los usuarios: " << acum2 / cont2 << " segundos" << endl<<endl;
+
+}
+
+void Logger::PromTipoUsuario(Mes desde,int desde_,int hasta_, int anio,int type)
+{
+
+	int acum = 0;              //acumula tiempo de uso de usuarios
+	int cont = 0;
+
+	if (type == 0)
+		cout << "Promedio de tiempo conexion para usuarios free: ";
+	if (type == 1)
+		cout << "Promedio de tiempo conexion para usuarios basic: ";
+	if (type == 2)
+		cout << "Promedio de tiempo conexion para usuarios premium: ";
+
+	for (int i = 0;i < ca;i++)
+	{
+		if (historial[i]->getdia() >= desde_ && historial[i]->getdia() <= hasta_ && historial[i]->getmes() ==desde && type == historial[i]->getTipoUsuario())   		{
+			acum = acum +historial[i]->gettiempo();
+			cont++;
+		}
+	}
+	if (cont == 0)
+		throw new exception("0");  //No hubo tiempo de conexion para ese tipo de usuario
+
+	cout << acum / cont <<"segundos"<<endl<<endl;
+}
+
+void Logger::OrdenarHistorial()
+{	
+	int cont ;
+	Log* aux = NULL;
+	for (int i = 0;i <ca ;i++)
+	{
+		cont = 0;
+
+		for (int j = 0;j < ca-1;j++)
+		{ 
+			if (historial[j+1]->gettiempo()>historial[j]->gettiempo())
+			{
+				aux = historial[j];
+				historial[j] = historial[j + 1];
+				historial[j + 1] = aux;
+			}
+			cont++;
+		}
+		if (cont == 0)
+		break;
+	}
+}
+
+string Logger::getNombreRandom()
+{
+	return historial[rand()%ca]->getnombre();
 }

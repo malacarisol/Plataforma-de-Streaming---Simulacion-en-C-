@@ -152,7 +152,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cJuegos.cpp" />
-    <ClCompile Include="cListaT.cpp" />
     <ClCompile Include="cMusica.cpp" />
     <ClCompile Include="cPeliculas.cpp" />
     <ClCompile Include="cService.cpp" />

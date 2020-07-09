@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <iomanip>
 #include "stdlib.h"
 #include <string>
 #include "cListaT.h"
@@ -15,24 +16,29 @@ class cStreaming
 {
 	cListaT<cService> Servicios;
 	cListaT<cUsuario> Usuarios;
-
 	string nombre;
 
 public:
-	void AgregarService(cService* algo);
-	void AgregarUsuario(cUsuario* user);
-	static string masEscuchados;	
-	static string masVistas;
-	static string masJugados;
-	bool Loguearse(string username, string password);
-	void Explorar(cUsuario* user, string tipoS);                 //muestra el contenido al usuario
-	void Simulacion();                                             //conecta usuarios y inicia un servicio al azar creando logs
-	void Listarnovedades(string serv);                 //solo se implementa si el usuario es free, le muestra las novedades
-	
 	cStreaming(string nombre);
 	~cStreaming();
+	void AgregarService(cService* algo);
+	void AgregarUsuario(cUsuario* user);
+	bool Loguearse(string username, string password);
+	void Explorar(cUsuario* user, int tipoS);                           //muestra el contenido al usuario
+	void Simulacion(int pos,int pos2,int dia,Mes mes,int anio);                                     //conecta 1 usuario y inicia un servicio al azar creando log
+	void Listarnovedades(int serv);    //solo se implementa si el usuario es free, le muestra las novedades
+
 };
 
 
 
+//inline void print(int tipoS) {
+//	switch (tipoS) {
+//	case 0: cout << "juegos"; break;
+//	case 1: cout << "peliculas"; break;
+//	case 2: cout << "musica"; break;
+//	}
+//	
+//}
 
+//typedef enum {juegos,peliculas,musica} tipoServicio;

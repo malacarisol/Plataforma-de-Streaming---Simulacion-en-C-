@@ -1,53 +1,72 @@
 #include "cPeliculas.h"
 
-cPeliculas::cPeliculas(int duracion, ePeliculas peli, string nombre, bool mayorEdad, tipoServicio tipoS, vector<string> paisesProhibidos) :cService(nombre, mayorEdad, tipoS, paisesProhibidos)
+cPeliculas::cPeliculas(int duracion, ePeliculas peli, string nombre, bool mayorEdad, tipoServicio tipoS, vector<string> paisesProhibidos) :cService(duracion,nombre, mayorEdad, tipoS, paisesProhibidos)
 {
-	this->duracion = duracion;
+	
 	this->peli = peli;
-	tiempo = 0;
-}
+
+};
 
 cPeliculas::~cPeliculas()
 {
 }
 
-void cPeliculas::Record()
-{
-	cout << "Grabacion de pelicula iniciada" << endl;
-}
 
 void cPeliculas::Fastforward()
 {
-	this->tiempo += 15;
+	this->TiempoActual += 15;
+	cout << "+15..." << endl;
 }
 
 void cPeliculas::Backward()
 {
-	this->tiempo -= 15;
+	this->TiempoActual -= 15;
+	cout << "-15..." << endl;
 }
 
-void cPeliculas::Iniciar()
+void cPeliculas::Iniciar(cUsuario* user)
 {
-	cout << "Iniciando.." << endl;
-	//this->tiempo = 0;
+	cout << "Busquese unos pochoclos la pelicula esta a punto de empezar.." << endl<<endl;
+
 }
 
 void cPeliculas::Pausar(int segundos)
 {
-	this->tiempo = segundos;
+	this->TiempoActual = segundos;
+	cout << "Desea volver hacia atras o avanzar?" << endl;
+
+	srand(time(NULL));
+	int opcion = rand() % (2 );
+
+	if (opcion == 1)
+	{	
+		Fastforward();
+	}	
+ 
+	else if (opcion == 2)
+	{
+		Backward();
+	}
+	return;
 }
 
-void cPeliculas::Apagar()
+void cPeliculas::Apagar(cUsuario* user)
 {
-	this->tiempo = duracion;                                  //Se asuma que se apaga el servicio al finalizar la pelicula
-	                                                                      
+	cService::Apagar(user);                               //Se asuma que se apaga el servicio al finalizar la pelicula
+	
 }
 
-
-ostream& operator<<(ostream& out, cPeliculas& m)
+string cPeliculas::getCategoria()
 {
-	//out << (cService&)m;     //ERROR:no operator << matches this operands!!
-	out << m.getNombre() << endl;
-	return out;
-	// TODO: insert return statement here
+	if (peli == 0)
+		return "terror";
+	else if (peli == 1)
+		return "ciencia Ficcion";
+	else if (peli == 2)
+		return "comedia";
+	else if (peli == 3)
+		return "infantil";
+
 }
+//typedef enum {terror, cienciaFiccion, comedia,infantil} ePeliculas;
+
