@@ -21,7 +21,12 @@ using namespace std;
 
 int main()
 {
-	Logger::logger.agregar(new Log("", "", 5, "", "", Mes::abril, Dia::jueves, 1997));
+	Logger::historial;
+
+	for (int i = 0; i < Logger::tam; i++)
+	{
+		Logger::historial[i] = NULL;
+	}
 
 	cStreaming* Labflix = new cStreaming("Labflix");  
 	
